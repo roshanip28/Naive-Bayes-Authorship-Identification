@@ -1,0 +1,49 @@
+FEATURES THAT GIVE MORE ACCURACY ON DEV DATA AND ARE USED IN THE CODE:
+
+1.	VOWEL COUNT
+•	As I studied for difference in writing styles, the major difference was the syllables used where in Shakespeare’s work includes nearly ten syllables which can be characterized by counting vowels. This is a significant feature that gave a huge improvement in accuracy.
+
+2.	LENGTH OF THE SENTENCES
+•	The major difference that is visible based on given s.data and b.data is that the sentences in b.data are approx. (2-3) words smaller than in s.data. So, I included sentence length to be a feature, which improves the accuracy to an extent.
+
+3.	AVERAGE LENGTH OF WORD IN SENTENCE
+•	Considering that different writers prefer using specific words. I averaged the length of these words and the mean made difference to the accuracy as well. 
+
+4.	COUNT OF LOWERCASE LETTERS IN SENTENCE
+•	Of both writings given that the sentence length is different and the words in a sentence can be of type (eg., O cruel). This feature does two things: Identifies lowercase letters, which also helps in replacing the feature of characters in a sentence. Because “except from entire capital words”, it is similar to character count in a line.
+
+5.	CHECKING IF ENTIRE WORD IS CAPITAL
+•	The above feature misses out on only one detail that has been separately added as a feature. Counting Entirely capital words. 
+
+6.	FREQUENCY OF PUNCTUATIONS
+•	I noticed a significant difference in the use of punctuations by Shakespeare and Bronte, the total number of punctuations in each line were quiet different leaving aside the type of punctuation. So, calculating a general punctuation count added to the accuracy.
+
+7.	FREQUENCY OF COLONS
+•	After considering the general punctuation count, specifically the colons made difference as they are considered to make independent clauses or give explanations that was visible in s.data. So, this feature was added separately that improved minor bit of accuracy.
+
+8.	SPLITING ON SPACES
+•	As I notice that there are extra whitespaces in one file compared to other and the trainind data takes the same, one file even separated ";" on spaces at the end of sentences which other did not. This also improved the accuracy.
+
+
+
+
+
+FEATURES THAT WERE CONSIDERED AND DID NOT CONTRIBUTE TO INCREASING ACCURACY ON DEV DATA SO SOME ARE STILL COMMENTED OUT IN THE CODE:
+
+1.	WORDS THAT START WITH UPPERCASE AND ARE NOT “I”
+•	Checking how many words in the line start with first letter capital.
+
+2.	IF THE FIRST WORD IS ENTIRELY CAPITAL 
+•	As there were many instances in the given text where there were many initial words that were entirely capital this was tried.
+
+3.	FREQUENCY OF START AND END WORDS
+•	Checking for specifically the start and the end words of the line. It did improve the accuracy negligibly. So it is not considered.
+
+4.	CHECKING CONSECUTIVE CONSONANTS
+•	To check if the author uses a specific type of words that have consecutive consonants.
+
+5.	FREQUENCY OF VOWELS IN STEM WORD
+•	To check the length of stem words and their sound, vowels were checked in the stem word. This had multiple uses, it checks the syllable category of words in a line and if the stem words are long that increases the overall line length.
+
+6	OTHERS (POS/ BIGRAMS / TRIGRAMS)
+•	By using default nltk functionalities I tried implementing Part of speech and ngrams, but as there was not significant impovement in accuracy. I dropped the code. The idea of filtering out the common  STOPWORDS was implemented as well, which did not help either.
